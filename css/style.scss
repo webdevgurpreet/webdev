@@ -1,0 +1,1060 @@
+//Variables
+
+$primary-font:'josefin sans';
+$primary-color:#C80063;
+$col-white:#fff;
+$col-black:#000;
+
+@mixin flex_property{
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: $primary-font;
+}
+
+html{
+    font-size: 15px;
+    scroll-behavior: smooth;
+}
+
+.inner{
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 5% 5%;
+}
+
+.flex-box{
+    @include flex_property();
+}
+
+// header start
+
+.scroll-up-btn{
+    position:fixed;
+    height: 45px;
+    width: 42px;
+    background-color:$primary-color;
+    right:30px;
+    bottom: 10px;
+    text-align: center;
+    line-height: 45px;
+    color: #fff;
+    z-index: 9999;
+    font-size: 30px;
+    border-radius: 6px;
+    cursor: pointer;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3 ease;
+}
+
+.scroll-up-btn.show{
+    bottom: 30px;
+    opacity:1;
+    pointer-events: auto;
+}
+
+header{
+    width: 100%;
+    background-color:$col-black;
+
+
+    .navbar{
+        width: 100%;
+        position: fixed;
+        z-index: 999;
+    }
+    .navbar.sticky{
+        // padding: 1% 5% 1% 5%;
+        background-color:$primary-color;
+    }
+
+    .navbar .logo h1{
+        color:$col-white;
+        transition: all 0.3s ease;
+    }
+    
+    .navbar.sticky .logo h1{
+        color:$col-white;
+    }
+
+    .navbar ul li a{
+        color:$col-white;
+        text-decoration: none;
+        transition: all 0.3s ease-in;
+    }
+
+    .navbar .menu-btn .arch{
+        color:$col-white;
+        transition: all 0.3s ease;
+    }
+
+    .navbar .menu-btn .toggle{
+        color:$col-white;
+        transition: all 0.3s ease;
+    }
+
+    nav{
+        padding: 1% 5% 1% 5%;
+        background-color:$col-black;
+        transition: all 0.3s ease-in;
+
+        @include flex_property();
+
+        .logo h1{
+            font-size: 2rem;
+            color:$col-white;
+            padding-top:4px;
+            font-family: $primary-font;
+        }
+
+        .menu-box{
+            @include flex_property();
+
+            ul{
+    
+                li{
+                    list-style: none;
+                    padding-left:25px ;
+                    font-size: 1.1rem;
+                    padding-top:14px;
+                    font-family: $primary-font;
+                    display:inline-block;
+                }
+            }
+
+            .menu-btn{
+                 .arch{
+                     color:$col-white;
+                     font-size: 1.1rem;
+                     padding-left:25px;
+                     padding-top:12px;
+                 }
+
+                 .toggle{
+                    color:$col-white;
+                    font-size: 1.1rem;
+                    border: none;
+                    background: none;
+                    padding-left:25px;
+                    padding-top:12px;
+                    display: none;
+                 }
+            }
+        }
+    }
+    
+    // banner start
+
+    .banner{
+        width: 100%;
+        height: 100%;
+        margin: 0 auto;
+        background-image: url(../img/man.png);
+        background-size:contain;
+        background-position:center;
+        background-repeat: no-repeat;
+        transition: 1s;
+
+        animation-name: animate;
+        animation-direction: alternate-reverse;
+        animation-play-state: running;
+        animation-timing-function:ease-in-out;
+        animation-duration: 8s;
+        animation-fill-mode: forwards;
+        animation-iteration-count: infinite;
+    }
+
+    @keyframes animate{
+        0%{
+            background-image: url(../img/man.png);
+        }
+        33%{
+            background-image: url(../img/woman_red_hair.png);
+        }
+        66%{
+            background-image: url(../img/woman_red_hair2.png);
+        }
+        100%{
+            background-image: url(../img/woman_blonde.png);
+        }
+        
+    }
+
+    .banner h1{
+        font-size: 6rem;
+        text-align: center;
+        margin-top:2rem;
+        font-family: 'hobo std';
+        color:$primary-color;
+        letter-spacing: 3px;
+    }
+
+    .box-2{
+        margin-top: 3rem;
+        @include flex_property();
+    }
+
+    .banner .box-2 .banner-left{
+        width: 30%;
+        padding: 3%;
+        text-align: center;
+        border: 5px solid gold;
+        transition: all 0.3s ease-in;
+    }
+
+    .banner .box-2 .banner-left:hover{
+       background-color: $col-black;
+       border: 5px solid $primary-color;
+    }
+
+    .banner-left h2{
+        font-size: 1.8rem;
+        color: $col-white;
+        margin-bottom:1rem;
+        text-align: center;
+        font-family: $primary-font;
+        transition: all 0.3s ease-in;
+    }
+
+    .banner-left:hover h2{
+        color: $primary-color;
+    }
+
+    .banner-left h1{
+        font-size: 2.5rem;
+        color: $col-white;
+        margin-top: 0;
+        margin-bottom:1rem;
+        text-align: center;
+        font-family: $primary-font;
+        transition: all 0.3s ease-in;
+    }
+
+    .banner-left:hover h1{
+        color: $primary-color;
+    }
+
+    .banner-left h3{
+        font-size: 2rem;
+        color: $col-white;
+        margin-top: 0;
+        margin-bottom:1rem;
+        text-align: center;
+        font-family: $primary-font;
+        transition: all 0.3s ease-in;
+    }
+
+    .banner-left:hover h3{
+        color: $primary-color;
+    }
+
+    .banner-left button{
+        width: 180px;
+        height: 45px;
+        padding-top: 3px;
+        background: none;
+        margin: 0 auto;
+        border: 3px solid $col-white;
+        font-size: 1.1rem;
+        font-weight: 500;
+        color:$col-white;
+        transition: all 0.3s ease-in;
+    }
+
+    .banner-left:hover button{
+        border: 3px solid gold;
+        color:gold;
+    }
+}
+
+// AWARD SECTION START
+
+.award{
+    width: 100%;
+    height:100%;
+    padding: 10%;
+    background-color:#111;
+
+    h1{
+        font-size: 4rem;
+        text-align: center;
+        color:$col-white;
+    }
+
+    h3{
+        font-size: 1.6rem;
+        text-align: center;
+        color:$col-white;
+    }
+}
+
+// anti age section
+
+.anti-age{
+    width: 100%;
+    height: 80vh;
+    background:url(../img/woman_red_hair.png),rgb(50,50,50);
+    background-blend-mode:multiply;
+    background-size:cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+
+    .age{
+        width: 60%;
+        max-width: 1200px;
+        padding: 5% 5%;
+    }
+
+    .age h4{
+        font-size: 1.4rem;
+        color:$col-white;
+    }
+
+    .age h1{
+        font-size: 4rem;
+        margin-top: 20px;
+        margin-bottom: 2rem;
+        color:$primary-color;
+    }
+
+    .age p{
+        font-size: 1.3rem;
+        letter-spacing: 1px;
+        word-spacing: 2px;
+        line-height: 25px;
+        color:$col-white;
+    }
+
+    .age button{
+        width: 200px;
+        height: 45px;
+        padding-top: 3px;
+        background: none;
+        margin: 0 auto;
+        border: 3px solid $col-white;
+        font-size: 1.1rem;
+        font-weight: 500;
+        margin-top: 20px;
+        color:$col-white;
+        transition: all 0.3s ease-in;
+    }
+
+    .age button:hover{
+        border: 3px solid gold;
+        color:gold;
+    }
+}
+
+// product section start
+.product{
+    width: 100%;
+    background-color:$col-white;
+    // padding-bottom:5% ;
+
+    .box-left{
+        width: 60%;
+    }
+
+    h2{
+        font-size: 2rem;
+        margin-bottom: 2rem;
+    }
+
+    h1{
+        font-size: 4rem;
+        margin-bottom: 2rem;
+        color: $primary-color;
+    }
+
+    p{
+        font-size: 1.3rem;
+        letter-spacing: 1px;
+        word-spacing: 2px;
+    }
+
+    .product-box{
+        width: 40%;
+        height: 40%;
+        margin-left:20%;
+        margin-bottom: 20%;
+        display: flex;
+        flex-wrap: wrap;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+        box-shadow: 0 6px 12px 0 #000;
+
+        h2{
+            margin: 0;
+            text-align: center;
+            color:$primary-color;
+        }
+    }
+
+    .box-right{
+        width: 40%;
+        box-shadow: 0 6px 12px 0 #000;
+
+
+        img{
+            width: 100%;
+        }
+    }
+}
+
+// beautifull
+
+.beautiful{
+    width: 100%;
+    background:url(../img/pexels-tomaz-barcellos-1987301.jpg),rgb(50,50,50);
+    background-blend-mode: multiply;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    padding-bottom: 5%;
+    margin: 0 auto;
+    text-align: center;
+
+    h2{
+        font-size: 1.6rem;
+        margin-bottom: 2rem;
+        color:$col-white;
+    }
+
+    h1{
+        font-size: 3rem;
+        margin-bottom: 2rem;
+        color:$primary-color;
+    }
+
+    button{
+        width: 200px;
+        height: 45px;
+        padding-top: 3px;
+        background: none;
+        border: 3px solid $col-white;
+        font-size: 1.1rem;
+        font-weight: 500;
+        margin-top:3rem;
+        color:$col-white;
+        transition: all 0.3s ease-in;
+    }
+
+    button:hover{
+        border: 3px solid gold;
+        color:gold;
+    }
+}
+
+// look section start
+
+.look{
+     width: 100%;
+     background-color:$col-white;
+
+        h2{
+            font-size: 1.4rem;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+    
+        h1{
+            font-size: 3.5rem;
+            margin-bottom: 2rem;
+            text-align: center;
+            color:$primary-color;
+        } 
+
+        .left{
+            width: 50%;
+
+            img{
+                width: 100%;
+                box-shadow: 0 6px 12px 0 #000;
+            }
+        }
+
+        .right{
+            width: 50%;
+            text-align: center;
+            background-color:$col-white;
+            padding: 8%;
+
+            h2{
+                margin-top: 3rem;
+                font-size: 2rem;
+                text-align: center;
+                line-height: 2rem;
+            }
+
+            button{
+                width: 200px;
+                height: 45px;
+                padding-top: 3px;
+                background: none;
+                border: 3px solid $col-black;
+                font-size: 1.1rem;
+                font-weight: 500;
+                margin-top:2rem;
+                color:$col-black;
+                transition: all 0.3s ease-in;
+            }
+
+            button:hover{
+                border: 3px solid gold;
+                color:gold;
+            }
+        }
+}
+
+// style section start
+
+.style{
+
+    .box-1{
+        background: url(../img/pexels-cottonbro-3993472.jpg),rgb(50,50,50);
+        background-blend-mode: multiply;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    .box-2{
+        background: url(../img/pexels-cottonbro-3997390.jpg),rgb(50,50,50);
+        background-blend-mode: multiply;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+    }
+
+    .box-3{
+        background: url(../img/pexels-thgusstavo-santana-2068672.jpg),rgb(50,50,50);
+        background-blend-mode: multiply;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+    }
+
+    .box{
+        width: 33.3%;
+        padding: 7% 2%;
+        text-align: center;
+        color:$col-white;
+        transition: all 0.3s ease-in;
+
+        button{
+            width: 150px;
+            height: 40px;
+            padding-top: 3px;
+            background: none;
+            border: 3px solid $col-white;
+            font-size: 1.1rem;
+            font-weight: 500;
+            color:$col-white;
+        }
+
+        button:hover{
+            border: 3px solid gold;
+            color:gold;
+        }
+
+        h1{
+            font-size: 2rem;
+            margin:2rem 0;
+            text-align: center;
+        }
+
+        h3{
+            font-size: 1.2rem;
+            text-align: center;
+        }
+    }
+
+    .box:hover{
+        transform:scale(1.05);
+    }
+}
+
+// footer section start
+
+footer{
+    background-color:$col-black;
+
+    .box{
+        width:25%;
+        padding: 10px;
+        color:$col-white;
+    }
+    
+    .box1{
+            background-color: $col-black;
+        h3{
+            font-size: 1.4rem;
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+
+        input{
+            padding: 10px;
+            border:2px solid #000;
+            border-radius: 6px;
+            outline: none;
+        }
+
+        button{
+            padding: 10px;
+            border:2px solid #000;
+            border-radius: 6px;
+            outline: none;
+        }
+
+        h2{
+            font-size: 1.6rem;
+            text-align: center;
+            margin-top: 2rem;
+        }
+
+        .spanbox{
+            text-align: center;
+        }
+
+        span{
+            text-align: center;
+            font-size: 2rem;
+            margin-top: 2rem;
+        }
+    }
+
+    .box-2{
+        h2{
+            font-size: 1.6rem;
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+
+        ul{
+            text-align: center;
+        }
+
+        li{
+            list-style: none;
+            padding-top: 10px;
+            font-size: 1.2rem;
+        }
+    }
+
+    .box-3{
+        h2{
+            font-size: 1.6rem;
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+
+        ul{
+            text-align: center;
+        }
+
+        li{
+            list-style: none;
+            padding-top: 10px;
+            font-size: 1.2rem;
+        }
+    }
+
+    .box-4{
+        h2{
+            font-size: 1.6rem;
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+
+        ul{
+            text-align: center;
+        }
+
+        li{
+            list-style: none;
+            padding-top: 10px;
+            font-size: 1.2rem;
+        }
+    }
+
+    hr{
+        width: 90%;
+        margin: 0 auto;
+    }
+
+    .last-box{
+        padding:20px 5%;
+        color: $col-white;
+
+        p{
+            font-size: 1.2rem;
+        }
+
+        .right-box{
+            span{
+                font-size: 1.4rem;
+                padding-left:10px ;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width:992px){
+
+    header .banner h1{
+        font-size: 4rem;
+    }
+
+    header .banner .box-2 .banner-left {
+        width: 30%;
+        padding: 3%;
+      }
+
+      header .banner-left h2 {
+        font-size: 1.4rem;
+        margin-bottom: 1rem;
+      }
+
+      header .banner-left h1 {
+        font-size: 2rem;
+      }
+
+      header .banner-left h3 {
+        font-size: 1.7rem;
+      }
+
+      header .banner-left button {
+        width: 150px;
+        height: 40px;
+        font-size:14px;
+      }
+
+      //   award section media 992px
+
+      .award h1 {
+        font-size: 3rem;
+      }
+
+      .award h3 {
+        font-size: 1.4rem;
+        margin-top:1rem ;
+      }
+
+    //   anti-age section media 992px
+
+      .anti-age .age {
+        width: 80%;
+        max-width: 1200px;
+        padding: 5% 5%;
+      }
+
+      .anti-age .age h4 {
+        font-size: 1.2rem;
+      }
+      
+      .anti-age .age h1 {
+        font-size: 3rem;
+      }
+      
+      .anti-age .age p {
+        font-size: 1.1rem;
+      }
+
+      .anti-age .age button {
+        width: 166px;
+        height: 40px;
+        font-size:14px;
+      }
+
+    //   product section media 992px
+
+      .product h2 {
+        font-size: 1.8rem;
+        margin-bottom: 2rem;
+      }
+      
+      .product h1 {
+        font-size: 3rem;
+        margin-bottom: 2rem;
+      }
+
+      .product p {
+        font-size: 1.1rem;
+      }
+
+    //   beautiful section  media 992px
+
+      .beautiful h2 {
+        font-size: 1.4rem;
+        margin-bottom: 2rem;
+      }
+      
+      .beautiful h1 {
+        font-size: 2.6rem;
+        margin-bottom: 1.6rem;
+      }
+
+      .beautiful button {
+        width: 166px;
+        height: 40px;
+        font-size:14px;
+      }
+
+    //   look  media 992px
+
+    .look h2 {
+        font-size: 1.3rem;
+    }
+      
+      .look h1 {
+        font-size: 2.6rem;
+      }
+
+      .look .right h2 {
+        font-size: 1.6rem;
+      }
+
+      .look .right button {
+        width: 166px;
+        height: 40px;
+        font-size:14px;
+      }
+
+    //   style section media 992px
+
+      .style .box button {
+        width: 135px;
+        height: 40px;
+        font-size:14px;
+      }
+
+      .style .box h1 {
+        font-size: 1.5rem;
+      }
+      
+      .style .box h3 {
+        font-size: 1rem;
+      }
+
+    //   footer section media 992px
+
+    footer .box {
+        width: 50%;
+        padding: 10px;
+        color: #fff;
+        margin-bottom: 3rem;
+      }
+
+      footer .box1 {
+        text-align: center;
+      }
+
+      footer .box-4 .timing-box{
+        padding: 0 15% 0 15%;
+      }
+      
+}
+
+@media only screen and (max-width:860px){
+
+    header nav .menu-box ul li{
+        display:block;
+        padding-bottom:20px ;
+        font-size: 1.4rem;
+    }
+
+    .navbar ul li a:hover{
+        color:$primary-color;
+    }
+
+    header nav .menu-box .menu-btn{
+        display:block;
+        z-index: 999;
+      }
+
+    header nav .menu-box .menu-btn .toggle{
+        display:block;
+        float: right;
+        outline: none;
+      }
+
+    header nav .menu-box .menu-btn .arch{
+        display:none;
+      }
+
+    .menu-btn span.active:before{
+        content: "\f00d";
+    }
+
+    header .navbar .menu-box .menu{
+        position: fixed;
+        height: 100vh;
+        width: 100%;
+        left: -100%;
+        top:0;
+        background:$col-black;
+        text-align: center;
+        padding-top: 80px;
+        transition: all 0.3s ease;
+    }
+
+    header .navbar .menu-box .menu.active{
+        left:0;
+    }
+}
+
+@media only screen and (max-width:768px){
+
+    header .banner h1{
+        font-size: 2.6rem;
+    }
+
+    header .banner .box-2 .banner-left {
+        width: 80%;
+        padding: 3%;
+        margin: 0 auto;
+      }
+
+      header .banner .box-2 #none{
+        display: none;
+      }
+
+      header .banner-left h2 {
+        font-size: 1.4rem;
+        margin-top: 1rem;
+      }
+
+      header .banner-left h1 {
+        font-size: 2rem;
+      }
+
+    //   award section mobile
+
+      .award h1 {
+        font-size: 2.6rem;
+      }
+
+      .award h3 {
+        font-size: 1.2rem;
+        margin-top:1rem ;
+      }
+
+      //   anti-age section mobile
+
+      .anti-age .age {
+        width: 100%;
+      }
+
+      .anti-age .age h4 {
+        font-size: 1.1rem;
+      }
+      
+      .anti-age .age h1 {
+        font-size: 2.6rem;
+      }
+      
+      .anti-age .age p {
+        font-size: 1rem;
+      }
+
+      //   product section mobile
+
+      .product .box-left {
+        width: 100%;
+      }
+
+      .product .product-box {
+        width: 40%;
+        height: 40%;
+        margin-left: 30%;
+        margin-bottom: 10%;
+      }
+
+      .product .box-right {
+        width: 80%;
+        margin: auto;
+        margin-top: 5rem;
+      }
+
+      .product h2 {
+        font-size: 1.4rem;
+        margin-bottom: 2rem;
+      }
+      
+      .product h1 {
+        font-size: 2.6rem;
+        margin-bottom: 2rem;
+      }
+
+      .product p {
+        font-size: 1rem;
+      }
+
+      //   beautiful section  mobile
+
+      .beautiful h2 {
+        font-size: 1rem;
+        padding-top: 2rem;
+        margin-bottom: 2rem;
+      }
+      
+      .beautiful h1 {
+        font-size: 1.6rem;
+        margin-bottom: 1rem;
+      }
+
+      .beautiful button {
+        margin-top:2rem;
+      }
+
+      //   look  media mobile
+
+      .look .left {
+        width: 100%;
+        text-align: center;
+      }
+      
+      .look .left img {
+        width: 80%;
+      }
+      
+      .look .right {
+        width: 100%;
+      }
+
+      // style section mobile
+
+      .style .box {
+        width: 100%;
+      }
+
+      // footer section mobile
+
+      footer .box {
+        width:100%;
+        padding: 10px;
+        color: #fff;
+      }
+      
+      footer .last-box p {
+        font-size: 1rem;
+      }
+      
+      footer .last-box .right-box span {
+        font-size: 1.2rem;
+        padding-left:5px;
+      }
+
+
+}
+
+

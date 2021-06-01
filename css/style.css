@@ -1,0 +1,991 @@
+* {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: "josefin sans";
+}
+
+html {
+  font-size: 15px;
+  scroll-behavior: smooth;
+}
+
+.inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 5% 5%;
+}
+
+.flex-box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.scroll-up-btn {
+  position: fixed;
+  height: 45px;
+  width: 42px;
+  background-color: #C80063;
+  right: 30px;
+  bottom: 10px;
+  text-align: center;
+  line-height: 45px;
+  color: #fff;
+  z-index: 9999;
+  font-size: 30px;
+  border-radius: 6px;
+  cursor: pointer;
+  opacity: 0;
+  pointer-events: none;
+  -webkit-transition: all 0.3 ease;
+  transition: all 0.3 ease;
+}
+
+.scroll-up-btn.show {
+  bottom: 30px;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+header {
+  width: 100%;
+  background-color: #000;
+}
+
+header .navbar {
+  width: 100%;
+  position: fixed;
+  z-index: 999;
+}
+
+header .navbar.sticky {
+  background-color: #C80063;
+}
+
+header .navbar .logo h1 {
+  color: #fff;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+header .navbar.sticky .logo h1 {
+  color: #fff;
+}
+
+header .navbar ul li a {
+  color: #fff;
+  text-decoration: none;
+  -webkit-transition: all 0.3s ease-in;
+  transition: all 0.3s ease-in;
+}
+
+header .navbar .menu-btn .arch {
+  color: #fff;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+header .navbar .menu-btn .toggle {
+  color: #fff;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+header nav {
+  padding: 1% 5% 1% 5%;
+  background-color: #000;
+  -webkit-transition: all 0.3s ease-in;
+  transition: all 0.3s ease-in;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+header nav .logo h1 {
+  font-size: 2rem;
+  color: #fff;
+  padding-top: 4px;
+  font-family: "josefin sans";
+}
+
+header nav .menu-box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+header nav .menu-box ul li {
+  list-style: none;
+  padding-left: 25px;
+  font-size: 1.1rem;
+  padding-top: 14px;
+  font-family: "josefin sans";
+  display: inline-block;
+}
+
+header nav .menu-box .menu-btn .arch {
+  color: #fff;
+  font-size: 1.1rem;
+  padding-left: 25px;
+  padding-top: 12px;
+}
+
+header nav .menu-box .menu-btn .toggle {
+  color: #fff;
+  font-size: 1.1rem;
+  border: none;
+  background: none;
+  padding-left: 25px;
+  padding-top: 12px;
+  display: none;
+}
+
+header .banner {
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+  background-image: url(../img/man.png);
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  -webkit-transition: 1s;
+  transition: 1s;
+  -webkit-animation-name: animate;
+          animation-name: animate;
+  animation-direction: alternate-reverse;
+  -webkit-animation-play-state: running;
+          animation-play-state: running;
+  -webkit-animation-timing-function: ease-in-out;
+          animation-timing-function: ease-in-out;
+  -webkit-animation-duration: 8s;
+          animation-duration: 8s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+}
+
+@-webkit-keyframes animate {
+  0% {
+    background-image: url(../img/man.png);
+  }
+  33% {
+    background-image: url(../img/woman_red_hair.png);
+  }
+  66% {
+    background-image: url(../img/woman_red_hair2.png);
+  }
+  100% {
+    background-image: url(../img/woman_blonde.png);
+  }
+}
+
+@keyframes animate {
+  0% {
+    background-image: url(../img/man.png);
+  }
+  33% {
+    background-image: url(../img/woman_red_hair.png);
+  }
+  66% {
+    background-image: url(../img/woman_red_hair2.png);
+  }
+  100% {
+    background-image: url(../img/woman_blonde.png);
+  }
+}
+
+header .banner h1 {
+  font-size: 6rem;
+  text-align: center;
+  margin-top: 2rem;
+  font-family: 'hobo std';
+  color: #C80063;
+  letter-spacing: 3px;
+}
+
+header .box-2 {
+  margin-top: 3rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+header .banner .box-2 .banner-left {
+  width: 30%;
+  padding: 3%;
+  text-align: center;
+  border: 5px solid gold;
+  -webkit-transition: all 0.3s ease-in;
+  transition: all 0.3s ease-in;
+}
+
+header .banner .box-2 .banner-left:hover {
+  background-color: #000;
+  border: 5px solid #C80063;
+}
+
+header .banner-left h2 {
+  font-size: 1.8rem;
+  color: #fff;
+  margin-bottom: 1rem;
+  text-align: center;
+  font-family: "josefin sans";
+  -webkit-transition: all 0.3s ease-in;
+  transition: all 0.3s ease-in;
+}
+
+header .banner-left:hover h2 {
+  color: #C80063;
+}
+
+header .banner-left h1 {
+  font-size: 2.5rem;
+  color: #fff;
+  margin-top: 0;
+  margin-bottom: 1rem;
+  text-align: center;
+  font-family: "josefin sans";
+  -webkit-transition: all 0.3s ease-in;
+  transition: all 0.3s ease-in;
+}
+
+header .banner-left:hover h1 {
+  color: #C80063;
+}
+
+header .banner-left h3 {
+  font-size: 2rem;
+  color: #fff;
+  margin-top: 0;
+  margin-bottom: 1rem;
+  text-align: center;
+  font-family: "josefin sans";
+  -webkit-transition: all 0.3s ease-in;
+  transition: all 0.3s ease-in;
+}
+
+header .banner-left:hover h3 {
+  color: #C80063;
+}
+
+header .banner-left button {
+  width: 180px;
+  height: 45px;
+  padding-top: 3px;
+  background: none;
+  margin: 0 auto;
+  border: 3px solid #fff;
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #fff;
+  -webkit-transition: all 0.3s ease-in;
+  transition: all 0.3s ease-in;
+}
+
+header .banner-left:hover button {
+  border: 3px solid gold;
+  color: gold;
+}
+
+.award {
+  width: 100%;
+  height: 100%;
+  padding: 10%;
+  background-color: #111;
+}
+
+.award h1 {
+  font-size: 4rem;
+  text-align: center;
+  color: #fff;
+}
+
+.award h3 {
+  font-size: 1.6rem;
+  text-align: center;
+  color: #fff;
+}
+
+.anti-age {
+  width: 100%;
+  height: 80vh;
+  background: url(../img/woman_red_hair.png), #323232;
+  background-blend-mode: multiply;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+.anti-age .age {
+  width: 60%;
+  max-width: 1200px;
+  padding: 5% 5%;
+}
+
+.anti-age .age h4 {
+  font-size: 1.4rem;
+  color: #fff;
+}
+
+.anti-age .age h1 {
+  font-size: 4rem;
+  margin-top: 20px;
+  margin-bottom: 2rem;
+  color: #C80063;
+}
+
+.anti-age .age p {
+  font-size: 1.3rem;
+  letter-spacing: 1px;
+  word-spacing: 2px;
+  line-height: 25px;
+  color: #fff;
+}
+
+.anti-age .age button {
+  width: 200px;
+  height: 45px;
+  padding-top: 3px;
+  background: none;
+  margin: 0 auto;
+  border: 3px solid #fff;
+  font-size: 1.1rem;
+  font-weight: 500;
+  margin-top: 20px;
+  color: #fff;
+  -webkit-transition: all 0.3s ease-in;
+  transition: all 0.3s ease-in;
+}
+
+.anti-age .age button:hover {
+  border: 3px solid gold;
+  color: gold;
+}
+
+.product {
+  width: 100%;
+  background-color: #fff;
+}
+
+.product .box-left {
+  width: 60%;
+}
+
+.product h2 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+
+.product h1 {
+  font-size: 4rem;
+  margin-bottom: 2rem;
+  color: #C80063;
+}
+
+.product p {
+  font-size: 1.3rem;
+  letter-spacing: 1px;
+  word-spacing: 2px;
+}
+
+.product .product-box {
+  width: 40%;
+  height: 40%;
+  margin-left: 20%;
+  margin-bottom: 20%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  text-align: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-shadow: 0 6px 12px 0 #000;
+          box-shadow: 0 6px 12px 0 #000;
+}
+
+.product .product-box h2 {
+  margin: 0;
+  text-align: center;
+  color: #C80063;
+}
+
+.product .box-right {
+  width: 40%;
+  -webkit-box-shadow: 0 6px 12px 0 #000;
+          box-shadow: 0 6px 12px 0 #000;
+}
+
+.product .box-right img {
+  width: 100%;
+}
+
+.beautiful {
+  width: 100%;
+  background: url(../img/pexels-tomaz-barcellos-1987301.jpg), #323232;
+  background-blend-mode: multiply;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  padding-bottom: 5%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.beautiful h2 {
+  font-size: 1.6rem;
+  margin-bottom: 2rem;
+  color: #fff;
+}
+
+.beautiful h1 {
+  font-size: 3rem;
+  margin-bottom: 2rem;
+  color: #C80063;
+}
+
+.beautiful button {
+  width: 200px;
+  height: 45px;
+  padding-top: 3px;
+  background: none;
+  border: 3px solid #fff;
+  font-size: 1.1rem;
+  font-weight: 500;
+  margin-top: 3rem;
+  color: #fff;
+  -webkit-transition: all 0.3s ease-in;
+  transition: all 0.3s ease-in;
+}
+
+.beautiful button:hover {
+  border: 3px solid gold;
+  color: gold;
+}
+
+.look {
+  width: 100%;
+  background-color: #fff;
+}
+
+.look h2 {
+  font-size: 1.4rem;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.look h1 {
+  font-size: 3.5rem;
+  margin-bottom: 2rem;
+  text-align: center;
+  color: #C80063;
+}
+
+.look .left {
+  width: 50%;
+}
+
+.look .left img {
+  width: 100%;
+  -webkit-box-shadow: 0 6px 12px 0 #000;
+          box-shadow: 0 6px 12px 0 #000;
+}
+
+.look .right {
+  width: 50%;
+  text-align: center;
+  background-color: #fff;
+  padding: 8%;
+}
+
+.look .right h2 {
+  margin-top: 3rem;
+  font-size: 2rem;
+  text-align: center;
+  line-height: 2rem;
+}
+
+.look .right button {
+  width: 200px;
+  height: 45px;
+  padding-top: 3px;
+  background: none;
+  border: 3px solid #000;
+  font-size: 1.1rem;
+  font-weight: 500;
+  margin-top: 2rem;
+  color: #000;
+  -webkit-transition: all 0.3s ease-in;
+  transition: all 0.3s ease-in;
+}
+
+.look .right button:hover {
+  border: 3px solid gold;
+  color: gold;
+}
+
+.style .box-1 {
+  background: url(../img/pexels-cottonbro-3993472.jpg), #323232;
+  background-blend-mode: multiply;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.style .box-2 {
+  background: url(../img/pexels-cottonbro-3997390.jpg), #323232;
+  background-blend-mode: multiply;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.style .box-3 {
+  background: url(../img/pexels-thgusstavo-santana-2068672.jpg), #323232;
+  background-blend-mode: multiply;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.style .box {
+  width: 33.3%;
+  padding: 7% 2%;
+  text-align: center;
+  color: #fff;
+  -webkit-transition: all 0.3s ease-in;
+  transition: all 0.3s ease-in;
+}
+
+.style .box button {
+  width: 150px;
+  height: 40px;
+  padding-top: 3px;
+  background: none;
+  border: 3px solid #fff;
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #fff;
+}
+
+.style .box button:hover {
+  border: 3px solid gold;
+  color: gold;
+}
+
+.style .box h1 {
+  font-size: 2rem;
+  margin: 2rem 0;
+  text-align: center;
+}
+
+.style .box h3 {
+  font-size: 1.2rem;
+  text-align: center;
+}
+
+.style .box:hover {
+  -webkit-transform: scale(1.05);
+          transform: scale(1.05);
+}
+
+footer {
+  background-color: #000;
+}
+
+footer .box {
+  width: 25%;
+  padding: 10px;
+  color: #fff;
+}
+
+footer .box1 {
+  background-color: #000;
+}
+
+footer .box1 h3 {
+  font-size: 1.4rem;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+footer .box1 input {
+  padding: 10px;
+  border: 2px solid #000;
+  border-radius: 6px;
+  outline: none;
+}
+
+footer .box1 button {
+  padding: 10px;
+  border: 2px solid #000;
+  border-radius: 6px;
+  outline: none;
+}
+
+footer .box1 h2 {
+  font-size: 1.6rem;
+  text-align: center;
+  margin-top: 2rem;
+}
+
+footer .box1 .spanbox {
+  text-align: center;
+}
+
+footer .box1 span {
+  text-align: center;
+  font-size: 2rem;
+  margin-top: 2rem;
+}
+
+footer .box-2 h2 {
+  font-size: 1.6rem;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+footer .box-2 ul {
+  text-align: center;
+}
+
+footer .box-2 li {
+  list-style: none;
+  padding-top: 10px;
+  font-size: 1.2rem;
+}
+
+footer .box-3 h2 {
+  font-size: 1.6rem;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+footer .box-3 ul {
+  text-align: center;
+}
+
+footer .box-3 li {
+  list-style: none;
+  padding-top: 10px;
+  font-size: 1.2rem;
+}
+
+footer .box-4 h2 {
+  font-size: 1.6rem;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+footer .box-4 ul {
+  text-align: center;
+}
+
+footer .box-4 li {
+  list-style: none;
+  padding-top: 10px;
+  font-size: 1.2rem;
+}
+
+footer hr {
+  width: 90%;
+  margin: 0 auto;
+}
+
+footer .last-box {
+  padding: 20px 5%;
+  color: #fff;
+}
+
+footer .last-box p {
+  font-size: 1.2rem;
+}
+
+footer .last-box .right-box span {
+  font-size: 1.4rem;
+  padding-left: 10px;
+}
+
+@media only screen and (max-width: 992px) {
+  header .banner h1 {
+    font-size: 4rem;
+  }
+  header .banner .box-2 .banner-left {
+    width: 30%;
+    padding: 3%;
+  }
+  header .banner-left h2 {
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+  }
+  header .banner-left h1 {
+    font-size: 2rem;
+  }
+  header .banner-left h3 {
+    font-size: 1.7rem;
+  }
+  header .banner-left button {
+    width: 150px;
+    height: 40px;
+    font-size: 14px;
+  }
+  .award h1 {
+    font-size: 3rem;
+  }
+  .award h3 {
+    font-size: 1.4rem;
+    margin-top: 1rem;
+  }
+  .anti-age .age {
+    width: 80%;
+    max-width: 1200px;
+    padding: 5% 5%;
+  }
+  .anti-age .age h4 {
+    font-size: 1.2rem;
+  }
+  .anti-age .age h1 {
+    font-size: 3rem;
+  }
+  .anti-age .age p {
+    font-size: 1.1rem;
+  }
+  .anti-age .age button {
+    width: 166px;
+    height: 40px;
+    font-size: 14px;
+  }
+  .product h2 {
+    font-size: 1.8rem;
+    margin-bottom: 2rem;
+  }
+  .product h1 {
+    font-size: 3rem;
+    margin-bottom: 2rem;
+  }
+  .product p {
+    font-size: 1.1rem;
+  }
+  .beautiful h2 {
+    font-size: 1.4rem;
+    margin-bottom: 2rem;
+  }
+  .beautiful h1 {
+    font-size: 2.6rem;
+    margin-bottom: 1.6rem;
+  }
+  .beautiful button {
+    width: 166px;
+    height: 40px;
+    font-size: 14px;
+  }
+  .look h2 {
+    font-size: 1.3rem;
+  }
+  .look h1 {
+    font-size: 2.6rem;
+  }
+  .look .right h2 {
+    font-size: 1.6rem;
+  }
+  .look .right button {
+    width: 166px;
+    height: 40px;
+    font-size: 14px;
+  }
+  .style .box button {
+    width: 135px;
+    height: 40px;
+    font-size: 14px;
+  }
+  .style .box h1 {
+    font-size: 1.5rem;
+  }
+  .style .box h3 {
+    font-size: 1rem;
+  }
+  footer .box {
+    width: 50%;
+    padding: 10px;
+    color: #fff;
+    margin-bottom: 3rem;
+  }
+  footer .box1 {
+    text-align: center;
+  }
+  footer .box-4 .timing-box {
+    padding: 0 15% 0 15%;
+  }
+}
+
+@media only screen and (max-width: 860px) {
+  header nav .menu-box ul li {
+    display: block;
+    padding-bottom: 20px;
+    font-size: 1.4rem;
+  }
+  .navbar ul li a:hover {
+    color: #C80063;
+  }
+  header nav .menu-box .menu-btn {
+    display: block;
+    z-index: 999;
+  }
+  header nav .menu-box .menu-btn .toggle {
+    display: block;
+    float: right;
+    outline: none;
+  }
+  header nav .menu-box .menu-btn .arch {
+    display: none;
+  }
+  .menu-btn span.active:before {
+    content: "\f00d";
+  }
+  header .navbar .menu-box .menu {
+    position: fixed;
+    height: 100vh;
+    width: 100%;
+    left: -100%;
+    top: 0;
+    background: #000;
+    text-align: center;
+    padding-top: 80px;
+    -webkit-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+  }
+  header .navbar .menu-box .menu.active {
+    left: 0;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  header .banner h1 {
+    font-size: 2.6rem;
+  }
+  header .banner .box-2 .banner-left {
+    width: 80%;
+    padding: 3%;
+    margin: 0 auto;
+  }
+  header .banner .box-2 #none {
+    display: none;
+  }
+  header .banner-left h2 {
+    font-size: 1.4rem;
+    margin-top: 1rem;
+  }
+  header .banner-left h1 {
+    font-size: 2rem;
+  }
+  .award h1 {
+    font-size: 2.6rem;
+  }
+  .award h3 {
+    font-size: 1.2rem;
+    margin-top: 1rem;
+  }
+  .anti-age .age {
+    width: 100%;
+  }
+  .anti-age .age h4 {
+    font-size: 1.1rem;
+  }
+  .anti-age .age h1 {
+    font-size: 2.6rem;
+  }
+  .anti-age .age p {
+    font-size: 1rem;
+  }
+  .product .box-left {
+    width: 100%;
+  }
+  .product .product-box {
+    width: 40%;
+    height: 40%;
+    margin-left: 30%;
+    margin-bottom: 10%;
+  }
+  .product .box-right {
+    width: 80%;
+    margin: auto;
+    margin-top: 5rem;
+  }
+  .product h2 {
+    font-size: 1.4rem;
+    margin-bottom: 2rem;
+  }
+  .product h1 {
+    font-size: 2.6rem;
+    margin-bottom: 2rem;
+  }
+  .product p {
+    font-size: 1rem;
+  }
+  .beautiful h2 {
+    font-size: 1rem;
+    padding-top: 2rem;
+    margin-bottom: 2rem;
+  }
+  .beautiful h1 {
+    font-size: 1.6rem;
+    margin-bottom: 1rem;
+  }
+  .beautiful button {
+    margin-top: 2rem;
+  }
+  .look .left {
+    width: 100%;
+    text-align: center;
+  }
+  .look .left img {
+    width: 80%;
+  }
+  .look .right {
+    width: 100%;
+  }
+  .style .box {
+    width: 100%;
+  }
+  footer .box {
+    width: 100%;
+    padding: 10px;
+    color: #fff;
+  }
+  footer .last-box p {
+    font-size: 1rem;
+  }
+  footer .last-box .right-box span {
+    font-size: 1.2rem;
+    padding-left: 5px;
+  }
+}
+/*# sourceMappingURL=style.css.map */
